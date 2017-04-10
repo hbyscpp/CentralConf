@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper   
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.seaky.centralconf.manager.mapper.ResEnvMapper">
+	<resultMap type="com.seaky.centralconf.manager.entry.po.ResEnv" id="envMap">
+		<id column="id" property="id" jdbcType="BIGINT" />
+		<result column="res_id" property="resId" jdbcType="BIGINT" />
+		<result column="env_name" property="envName" jdbcType="VARCHAR" />
+		<result column="env_desc" property="envDesc" jdbcType="BIGINT" />
+		<result column="create_user_id" property="createUserId" jdbcType="BIGINT" />
+		<result column="create_time" property="createTime" jdbcType="BIGINT" />
+		<result column="update_time" property="updateTime" jdbcType="BIGINT" />
+	</resultMap>
+
+	<select id="geEnv" resultMap="envMap">
+		select
+		*
+		from conf_resenv e where e.res_id=#{resId}
+		<if test="type!=1">
+			and e.id in(select env_id from conf_user_res_env where
+			user_id=#{UserId}
+			and res_id=#{resId}
+			)
+		</if>
+
+	</select>
+
+
+</mapper>

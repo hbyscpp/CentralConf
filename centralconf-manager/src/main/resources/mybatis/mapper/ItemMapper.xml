@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper   
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.seaky.centralconf.manager.mapper.ItemMapper">
+	<resultMap type="com.seaky.centralconf.manager.entry.po.Item" id="itemMap">
+		<id column="id" property="id" jdbcType="BIGINT" />
+		<result column="env_id" property="envId" jdbcType="BIGINT" />
+		<result column="item_name" property="itemName" jdbcType="VARCHAR" />
+		<result column="item_value" property="itemValue" jdbcType="VARCHAR" />
+		<result column="item_desc" property="itemDesc" jdbcType="BIGINT" />
+		<result column="type" property="type" jdbcType="INTEGER" />
+		<result column="create_time" property="createTime" jdbcType="BIGINT" />
+		<result column="update_time" property="updateTime" jdbcType="BIGINT" />
+		<result column="create_user_id" property="createUserId" jdbcType="BIGINT" />
+		<result column="is_default" property="isDefault" jdbcType="INTEGER" />
+	</resultMap>
+
+	<select id="getRelationResourceItem" resultMap="itemMap">
+		SELECT i.id,i.item_name,i.item_value,i.env_id,i.item_desc FROM conf_bind_item b,conf_appenv_resource r,conf_item i
+		WHERE b.appenv_res_id=r.id
+		AND r.app_id=#{appId}
+		AND r.app_env_id=#{envId}
+		AND i.id = b.item_id
+	</select>
+	
+	<select id="getBindItem" resultMap="itemMap">
+		SELECT i.id,i.item_name,i.item_value FROM conf_bind_item b,conf_appenv_resource r,conf_item i
+		WHERE b.appenv_res_id=r.id 
+		AND  r.app_id=#{appId} 
+		AND r.app_env_id=#{envId} 
+		AND r.res_id =#{resId}
+		AND r.res_env_id=#{resEnvId}
+		AND i.id = b.item_id AND i.is_default=1
+	</select>
+
+
+</mapper>

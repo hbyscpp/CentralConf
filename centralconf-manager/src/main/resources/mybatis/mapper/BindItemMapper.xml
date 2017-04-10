@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper   
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.seaky.centralconf.manager.mapper.BindItemMapper">
+	<resultMap type="com.seaky.centralconf.manager.entry.po.BindItem"  id="bindItemMap">
+		<id column="id" property="id" jdbcType="BIGINT" />
+		<result column="appenv_res_id" property="appenvResId" jdbcType="BIGINT" />
+		<result column="item_id" property="itemId" jdbcType="BIGINT" />
+	</resultMap>
+
+	<select id="getBindItem" resultMap="bindItemMap">
+		SELECT * FROM conf_bind_item b,conf_appenv_resource r,conf_item i
+		WHERE b.appenv_res_id=r.id AND  r.app_id=#{appId} AND r.app_env_id=#{envId}
+		AND i.id = b.item_id AND i.is_default=1
+	</select>
+
+
+</mapper>

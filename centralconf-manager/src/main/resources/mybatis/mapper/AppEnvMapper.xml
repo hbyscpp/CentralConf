@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper   
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.seaky.centralconf.manager.mapper.AppEnvMapper">
+	<resultMap type="com.seaky.centralconf.manager.entry.po.AppEnv"
+		id="envMap">
+		<id column="id" property="id" jdbcType="BIGINT" />
+		<result column="app_id" property="appId" jdbcType="BIGINT" />
+		<result column="env_name" property="envName" jdbcType="VARCHAR" />
+		<result column="env_desc" property="envDesc" jdbcType="BIGINT" />
+		<result column="create_user_id" property="createUserId"
+			jdbcType="BIGINT" />
+		<result column="create_time" property="createTime" jdbcType="BIGINT" />
+		<result column="update_time" property="updateTime" jdbcType="BIGINT" />
+	</resultMap>
+
+	<select id="geEnv" resultMap="envMap">
+		select
+		*
+		from conf_appenv e where e.app_id=#{appId}
+		and env_name!=#{common}
+		<if test="type!=1">
+			and e.id in(select env_id from conf_user_app_env where user_id=#{UserId}
+			and app_id=#{appId}
+			)
+		</if>
+
+	</select>
+
+
+</mapper>
