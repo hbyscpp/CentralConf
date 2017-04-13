@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
-import com.seaky.centralconf.manager.common.YtException;
+import com.seaky.centralconf.core.common.YtException;
 import com.seaky.centralconf.manager.entry.po.App;
 import com.seaky.centralconf.manager.entry.vo.AppVo;
 import com.seaky.centralconf.manager.entry.vo.JsonPage;

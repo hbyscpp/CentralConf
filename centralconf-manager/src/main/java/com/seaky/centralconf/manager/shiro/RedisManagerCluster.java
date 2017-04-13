@@ -8,7 +8,7 @@ import java.util.Set;
 
 import org.apache.shiro.session.Session;
 
-import com.seaky.centralconf.manager.common.RedisCluster;
+import com.seaky.centralconf.core.common.RedisCluster;
 
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;

@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.seaky.centralconf.manager.common.Errorcode;
-import com.seaky.centralconf.manager.common.WebResponse;
-import com.seaky.centralconf.manager.common.YtException;
+import com.seaky.centralconf.core.common.Errorcode;
+import com.seaky.centralconf.core.common.WebResponse;
+import com.seaky.centralconf.core.common.YtException;
 import com.seaky.centralconf.manager.exception.YtfmUserErrors;
 import com.seaky.centralconf.manager.util.base.Const;
 

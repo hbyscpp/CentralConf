@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.seaky.centralconf.configService.entry.po.Item;
 import com.seaky.centralconf.configService.service.ItemService;
-import com.yuntu.commons.web.WebResponse;
+import com.seaky.centralconf.core.common.WebResponse;
 
 @Controller
 public class ItemController {

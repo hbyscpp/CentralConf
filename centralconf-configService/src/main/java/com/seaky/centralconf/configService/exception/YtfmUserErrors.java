@@ -1,6 +1,6 @@
 package com.seaky.centralconf.configService.exception;
 
-import com.yuntu.exception.Errorcode;
+import com.seaky.centralconf.core.common.Errorcode;
 
 public class YtfmUserErrors {
 

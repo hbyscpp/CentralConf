@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.seaky.centralconf.manager.common.WebResponse;
+import com.seaky.centralconf.core.common.WebResponse;
 import com.seaky.centralconf.manager.entry.po.User;
 import com.seaky.centralconf.manager.entry.vo.AppVo;
 import com.seaky.centralconf.manager.entry.vo.JsonPage;

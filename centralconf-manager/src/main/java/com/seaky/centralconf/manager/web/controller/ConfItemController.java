@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.seaky.centralconf.manager.common.WebResponse;
+import com.seaky.centralconf.core.common.WebResponse;
 import com.seaky.centralconf.manager.entry.vo.AppEnvVo;
 import com.seaky.centralconf.manager.entry.vo.AppVo;
 import com.seaky.centralconf.manager.entry.vo.ItemVo;
@@ -191,13 +191,20 @@ public class ConfItemController {
    * 更新开始
    */
   @RequestMapping("/toItemDetail")
-  public ModelAndView toItemDetail(String app, String env) {
-    ModelAndView mv = new ModelAndView();
-    mv.addObject("app", app);
-    mv.addObject("env", env);
-    mv.setViewName("app/itemDetail");
-    return mv;
-  }
+	public ModelAndView toItemDetail(Long appId, Long envId) {
+		ModelAndView mv = new ModelAndView();
+		Map<String, Object> map = new HashMap<String, Object>();
+		AppVo app = appService.getAppById(appId);
+		AppEnvVo appEnvVo = envService.getEnvById(envId);
+		mv.addObject("app", app);
+		map.put("appId", appId.toString());
+		map.put("envId", envId.toString());
+		map.put("appName", app.getAppName());
+		map.put("envName", appEnvVo.getEnvName());
+		mv.addObject("env", map);
+		mv.setViewName("app/itemDetail");
+		return mv;
+	}
 
   @RequestMapping("/toCommonItemDetail")
   public ModelAndView toCommonItemDetail(Long appId) {

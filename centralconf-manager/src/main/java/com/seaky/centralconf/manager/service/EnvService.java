@@ -17,4 +17,6 @@ public interface EnvService {
 	public String getCommonEnvName();
 	
 	public Long createCommonEnv(Long appId);
+
+	public AppEnvVo getEnvById(Long id);
 }

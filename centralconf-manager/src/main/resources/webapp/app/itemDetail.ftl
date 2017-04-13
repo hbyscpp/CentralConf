@@ -27,8 +27,8 @@ body #sourceListTable td {
 </head>
 <body>
 
-	<input value=${app } type="hidden" id="appId">
-	<input value=${env } type="hidden" id="envId">
+	<input value=${env.appId} type="hidden" id="appId">
+	<input value=${env.envId} type="hidden" id="envId">
 	<div class="row">
 
 		<!-- col -->
@@ -36,8 +36,8 @@ body #sourceListTable td {
 			<h1 class="page-title txt-color-blueDark">
 
 				<!-- PAGE HEADER -->
-				<i class="fa-fw fa fa-table"></i> APPS <span id="app_span">> <a href="#toApp">应用（${app}）</a>
-				 > <a href="#toEnv?app=${app}">环境（${env}）</a></span> <span>> 配置项 </span>
+				<i class="fa-fw fa fa-table"></i> APPS <span id="app_span">> <a href="#toApp">应用（${env.appName}）</a>
+				 > <a href="#toEnv?appId=${env.appId}">环境（${env.envName}）</a></span> <span>> 配置项 </span>
 			</h1>
 		</div>
 

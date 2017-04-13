@@ -14,7 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
-import com.seaky.centralconf.manager.common.YtException;
+import com.seaky.centralconf.core.common.YtException;
 import com.seaky.centralconf.manager.entry.po.User;
 import com.seaky.centralconf.manager.entry.po.UserPerm;
 import com.seaky.centralconf.manager.entry.vo.JsonPage;

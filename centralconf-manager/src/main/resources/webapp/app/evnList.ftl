@@ -42,7 +42,7 @@ body #sourceListTable td {
 </head>
 <body>
 
-	<input value=${app } type="hidden" id="appId">
+	<input value=${app.appId} type="hidden" id="appId">
 	<div class="row">
 
 		<!-- col -->
@@ -51,7 +51,7 @@ body #sourceListTable td {
 
 				<!-- PAGE HEADER -->
 				<i class="fa-fw fa fa-table"></i> APPS <span id="app_span">>
-					<a href="#toApp">应用（${app}）</a>
+					<a href="#toApp">应用（${app.appName}）</a>
 				</span> <span>> 环境 </span>
 			</h1>
 		</div>

@@ -66,7 +66,7 @@ $(function() {
 
 	window.operateEvents = {
 		'click .btn_edit' : function(e, value, row, index) {
-			window.location.href = "index#toEnv?app=" + row.id;
+			window.location.href = "index#toEnv?appId=" + row.id;
 			// var $a = $("<a>");
 			// $a.attr('href', "index#toEnv?app=" + row.id);
 			// $a[0].click();

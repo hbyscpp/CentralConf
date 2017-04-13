@@ -1,6 +1,6 @@
 package com.seaky.centralconf.manager.exception;
 
-import com.seaky.centralconf.manager.common.Errorcode;
+import com.seaky.centralconf.core.common.Errorcode;
 
 public class YtfmUserErrors {
 

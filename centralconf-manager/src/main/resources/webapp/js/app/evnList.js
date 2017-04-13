@@ -162,7 +162,7 @@ $(function() {
 			// +
 			// $("#appName").val());
 			// $a[0].click();
-			window.location.href = "index#toItemDetail?env=" + row.id + "&app=" + $("#appId").val();
+			window.location.href = "index#toItemDetail?envId=" + row.id + "&appId=" + $("#appId").val();
 		},
 		'click .btn_delete' : function(e, value, row, index) {
 			$("#mySmallModalLabel").text("应用删除环境(" + row.envName + ")")

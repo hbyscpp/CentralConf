@@ -13,7 +13,7 @@ import com.seaky.centralconf.configService.entry.po.AppEnv;
 import com.seaky.centralconf.configService.entry.po.Item;
 import com.seaky.centralconf.configService.exception.YtfmUserErrors;
 import com.seaky.centralconf.configService.mapper.ItemMapper;
-import com.yuntu.exception.YtException;
+import com.seaky.centralconf.core.common.YtException;
 
 @Service
 @Transactional

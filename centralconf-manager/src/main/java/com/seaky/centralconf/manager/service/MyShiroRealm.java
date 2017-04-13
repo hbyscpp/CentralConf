@@ -16,7 +16,7 @@ import org.apache.shiro.subject.Subject;
 import org.apache.shiro.util.ByteSource;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.seaky.centralconf.manager.common.YtException;
+import com.seaky.centralconf.core.common.YtException;
 import com.seaky.centralconf.manager.entry.po.User;
 import com.seaky.centralconf.manager.entry.vo.PermissionVo;
 import com.seaky.centralconf.manager.exception.YtfmUserErrors;
